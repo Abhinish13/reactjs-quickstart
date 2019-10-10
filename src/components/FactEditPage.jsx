@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router';
+import {withRouter} from 'react-router-dom';
 
-class FactEditPage extends Component {
 
+class EditFactPage extends Component {
+    
     factId = this.props.match.params.factId;
 
     render() {
-        return(
+        return (
             <div className="text-center">
                 <h1>Edit fact</h1>
                 <p>Fact Id: {this.factId}</p>
@@ -15,15 +16,4 @@ class FactEditPage extends Component {
     }
 }
 
-export default withRouter(FactEditPage)
-
-
-
-
-
-
-
-
-
-
-
+export default withRouter(EditFactPage);
