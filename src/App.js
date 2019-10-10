@@ -17,7 +17,7 @@ class App extends Component {
         <Fragment>
             <PageNavbar/>
             <Route path="/help" component={HelpPage} />
-            <Route path="/EditFact/:factId" component={FactEditPage}/>
+            <Route path="/EditFact/:factId" component={FactEditPage} />
             <Route path="/" exact={true} component={FactsListPage} />
         </Fragment>
       </Router>

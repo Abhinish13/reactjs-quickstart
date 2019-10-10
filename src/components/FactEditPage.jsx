@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router';
 
 
-class EditFactPage extends Component {
+class FactEditPage extends Component {
     
     factId = this.props.match.params.factId;
 
@@ -16,4 +16,4 @@ class EditFactPage extends Component {
     }
 }
 
-export default withRouter(EditFactPage);
+export default withRouter(FactEditPage);

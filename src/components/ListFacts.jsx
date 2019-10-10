@@ -11,15 +11,15 @@ export const ListFacts = ({limit,facts}) => {
         return (
             <Container>
             <Table>
-               <thead><tr><th>Facts</th><th>Date</th></tr></thead>
+               <thead><tr><th>Facts</th><th>Date</th><th/></tr></thead>
                <tbody>
                    {
-                       facts.slice(0,limit).map(facts => (
-                        <tr key={facts._id}>
-                            <td>{facts.text}</td>
-                            <td>{facts.createdAt}</td>
+                       facts.slice(0,limit).map(fact => (
+                        <tr key={fact._id}>
+                            <td>{fact.text}</td>
+                            <td>{fact.createdAt}</td>
                             <td className="text-right">
-                                <Link tag={Link} to={`/EditFacts/${facts._id}`}></Link>
+                                <Link tag={Link} to={`/EditFact/${fact._id}`}>Edit</Link>
                             </td>
                         </tr>
 
