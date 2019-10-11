@@ -2,6 +2,8 @@ import {decorate, observable} from 'mobx';
 
 class AuthService {
 
+    authInfo = null;
+
     login = () => {
         this.authInfo = {
             fullName : "Abhinish Raj",
@@ -13,14 +15,16 @@ class AuthService {
     logout = () => {
         this.authInfo = null;
 
-    }
+    }                                                                                                                                                                           
 
-    decorate(AuthService, {
-        "authInfo": observable
-    });
+    
 
 
 }
+
+decorate(AuthService, {
+    "authInfo": observable
+});
 
 const instance = new AuthService();
 
