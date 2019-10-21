@@ -1,13 +1,40 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Button } from "reactstrap";
 //import FactsListPage from "./FactsListPage";
 
 export default class FactsAddBotton extends Component {
   render() {
+    if (this.props.isDisabled === true) {
+      return (
+        <Fragment>
+          <Button outline color="primary" disabled>
+            +
+          </Button>
+          <Button
+            className="m-2"
+            outline
+            color="danger"
+            onClick={this.props.onLimitDecrement}
+          >
+            -
+          </Button>
+        </Fragment>
+      );
+    }
     return (
-      <Button outline color="primary" onClick={this.props.onLimitIncrement}>
-        +
-      </Button>
+      <Fragment>
+        <Button outline color="primary" onClick={this.props.onLimitIncrement}>
+          +
+        </Button>
+        <Button
+          outline
+          className="m-2"
+          color="danger"
+          onClick={this.props.onLimitDecrement}
+        >
+          -
+        </Button>
+      </Fragment>
     );
   }
 }
