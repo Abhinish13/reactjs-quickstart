@@ -8,8 +8,7 @@ class FactsListPage extends Component {
   state = {
     facts: null,
     limit: 35,
-    length: null,
-    isDisabled: false
+    length: null
   };
 
   componentDidMount() {
@@ -37,7 +36,12 @@ class FactsListPage extends Component {
   decreaseLimit = () => {
     if (this.state.limit !== 0) {
       this.setState({
-        limit: this.state.limit - 1
+        limit: this.state.limit - 1,
+        isDisabled: false
+      });
+    } else {
+      this.setState({
+        isDisabled: false
       });
     }
 
@@ -45,7 +49,7 @@ class FactsListPage extends Component {
   };
 
   render() {
-    const { facts, limit, isDisabled } = this.state;
+    const { facts, limit, length } = this.state;
     const headerStyle = { textAlign: "center" };
     if (!this.state.facts) return <h1 style={headerStyle}>Loading ...</h1>;
     return (
@@ -56,7 +60,8 @@ class FactsListPage extends Component {
             <FactsAddBotton
               onLimitIncrement={this.increaseLimit}
               onLimitDecrement={this.decreaseLimit}
-              isDisabled={isDisabled}
+              limit={limit}
+              length={length}
             />
           }
         </h1>
